@@ -18,6 +18,7 @@
         padding: 20px 30px;
         line-height: 1.6;
         font-size: 16px;
+        opacity: 0.85;
         background-color: #f8f8fd;
         box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
         >h1 {
@@ -145,7 +146,6 @@
 @media screen and (max-width:1200px) and (min-width: 770px) {
     .page {
         width: 90%;
-        background-color: #DD4433;
     }
 }
 @media screen and (max-width: 770px) {
