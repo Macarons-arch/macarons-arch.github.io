@@ -26,16 +26,16 @@ Library evolution:动态库的链接时间推迟到运行时（违背静态语�
 # @objc
 关于swift的动态性，swift是静态语言，但在swift中所有继承自NSObject的类都保留了OC的动态性。如果想使用它的动态性，就必须加上@objc关键字。以下情况需要用到@objc
 1.Protocol如果是optional的，必须加上@objc
-    ```swift
-    @objc protocol PlayerDelegate: class {
+```swift
+@objc protocol PlayerDelegate: class {
+
+    @objc optional func playerReadyToPlay(player: CustomMediaPlayer, totalTime: Double)
     
-        @objc optional func playerReadyToPlay(player: CustomMediaPlayer, totalTime: Double)
+    @objc optional func playerCacheProgress(player: CustomMediaPlayer, progress: Float)
         
-        @objc optional func playerCacheProgress(player: CustomMediaPlayer, progress: Float)
-            
-        func playerPlayProgress(player: CustomMediaPlayer, currentTime: Double)
-    }
-    ```
+    func playerPlayProgress(player: CustomMediaPlayer, currentTime: Double)
+}
+```
 2.利用#selector调用的方法，被调用的方法必须加上@objc
 3.使用kvc时
 4.NSPredicate筛选
