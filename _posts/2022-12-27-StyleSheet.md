@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "RN开发-StyleSheet"
-categories: React native
+categories: React-Native
 tags:  StyleSheet
 author: 何勇
 ---
@@ -25,4 +25,13 @@ author: 何勇
         ·引入:import {StyleSheet, View} from 'react-native'
         ·声明:const styles = StyleSheet.create({ foo: {样式1}, bar: {样式2}})
         ·使用:<View style = {[ styles.foo, styles.bar]}>内容</View>
-
+        
+# Flexbox属性
+    ·flexDirection
+        ·声明主轴方向：row｜column（RN默认）
+    ·justifyContent
+        ·声明项目在主轴上的对齐方式
+    ·alignItems
+        ·声明项目在交叉轴上的对齐方式
+    ·flex
+        ·声明项目在主轴上的尺寸比例
