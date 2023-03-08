@@ -7,7 +7,7 @@
 
 # Site settings
 title: 何勇的技术专栏
-brief-intro: iOS and Flutter Coder
+brief-intro: iOS Coder
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://macarons-arch.github.io/" # the base hostname & protocol for your site
 
