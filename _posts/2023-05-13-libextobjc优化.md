@@ -12,7 +12,7 @@ author: 何勇
 
 # libextobjc源码
 
-```objective-c
+```Objective-C
 #define concreteprotocol(NAME) \
     /*
      * create a class used to contain all the methods used in this protocol
@@ -68,7 +68,7 @@ author: 何勇
 方案二，参考KVO的做法，让MyClass的isa指针指向MyClass_ProtocolMethodContainer，协议方法由MyClass_ProtocolMethodContainer承担，但弊端同KVO一样，注射的协议不能继承。不太可行
 
 方案三：耗时根症在于7万个class的遍历，能否缩小遍历的class范围？通过在继承特殊协议时注解体现？
-```objective-c
+```Objective-C
 @interface MyClass: NSObject <MyProtocol>
 @end
  
