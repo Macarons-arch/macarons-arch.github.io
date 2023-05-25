@@ -12,7 +12,7 @@ author: 何勇
 
 # libextobjc源码
 
-```Objective-C
+```
 #define concreteprotocol(NAME) \
     /*
      * create a class used to contain all the methods used in this protocol
@@ -58,7 +58,8 @@ author: 何勇
     协议排序：协议样本array，协议a，协议b，如果协议a的子协议覆盖样本广于协议b，那么a的相对位置在b前（协议样本较少的原因，这部分不算耗时大头）
     协议注入前将协议样本排序，核心代码如下：
     从下面的代码看出，遍历了所有specialProtocol和class，耗时主要来源于此处
-    ![markdown picture](../picture/libextobjc-1.png)
+
+![markdown picture](../picture/libextobjc-1.png)
     
 4.统计了下项目大概7万个oc class，遍历大概超过了200ms(iPhone13测试数据)
 
@@ -68,7 +69,7 @@ author: 何勇
 方案二，参考KVO的做法，让MyClass的isa指针指向MyClass_ProtocolMethodContainer，协议方法由MyClass_ProtocolMethodContainer承担，但弊端同KVO一样，注射的协议不能继承。不太可行
 
 方案三：耗时根症在于7万个class的遍历，能否缩小遍历的class范围？通过在继承特殊协议时注解体现？
-```Objective-C
+```
 @interface MyClass: NSObject <MyProtocol>
 @end
  
@@ -91,7 +92,7 @@ author: 何勇
             objc_getClass(metamacro_stringify(CLASSNAME)) \
         ); \
     } \
-    @end \
+    @end
 
 ```
 
