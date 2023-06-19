@@ -13,7 +13,7 @@ author: 何勇
 
 # hook_objc_msgSend的实现
 
-```C
+```
 __attribute__((__naked__))
 static void hook_objc_msgSend() {
     //before之前保存objc_msgSend的参数
